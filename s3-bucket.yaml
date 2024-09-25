@@ -1,0 +1,7 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Template to create a simple S3 bucket
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: 'prateek-s3-bucket-yaml'  # Replace with a globally unique name
