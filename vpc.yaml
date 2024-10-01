@@ -1,10 +1,10 @@
-AWSTempleteFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: '2010-09-09'
 Description: 'Cloudformation for VPC'
 
 Resources:
   MyVPC:
     Type: 'AWS::EC2::VPC'
-    Properites:
+    Properties:
       CidrBlock: '172.16.0.0/16'
       EnableDnsSupport: true
       EnableDnsHostnames: true
