@@ -13,7 +13,7 @@ Resources:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId: !Ref ProjectVpc
-      CidrBlock: "172.16.1.0/24" # Unique CIDR block
+      CidrBlock: "192.168.10.0/28" # Unique CIDR block
       AvailabilityZone: !Select [0, !GetAZs ""]
       MapPublicIpOnLaunch: true
       Tags:
@@ -24,7 +24,7 @@ Resources:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId: !Ref ProjectVpc
-      CidrBlock: "172.16.2.0/24" # Unique CIDR block
+      CidrBlock: "192.168.10.16/28" # Unique CIDR block
       AvailabilityZone: !Select [0, !GetAZs ""]
       Tags:
         - Key: Sai
@@ -34,7 +34,7 @@ Resources:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId: !Ref ProjectVpc
-      CidrBlock: "172.16.3.0/24" # Unique CIDR block
+      CidrBlock: "192.168.10.32/28" # Unique CIDR block
       AvailabilityZone: !Select [0, !GetAZs ""]
       Tags:
         - Key: Sai
@@ -44,7 +44,7 @@ Resources:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId: !Ref ProjectVpc
-      CidrBlock: "172.16.4.0/24" # Unique CIDR block
+      CidrBlock: "192.168.10.48/28" # Unique CIDR block
       AvailabilityZone: !Select [1, !GetAZs ""]
       MapPublicIpOnLaunch: true
       Tags:
@@ -55,7 +55,7 @@ Resources:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId: !Ref ProjectVpc
-      CidrBlock: "172.16.5.0/24" # Unique CIDR block
+      CidrBlock: "192.168.10.64/28" # Unique CIDR block
       AvailabilityZone: !Select [1, !GetAZs ""]
       Tags:
         - Key: Sai
@@ -65,7 +65,7 @@ Resources:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId: !Ref ProjectVpc
-      CidrBlock: "172.16.6.0/24" # Unique CIDR block
+      CidrBlock: "192.168.10.80/28" # Unique CIDR block
       AvailabilityZone: !Select [1, !GetAZs ""]
       Tags:
         - Key: Sai
