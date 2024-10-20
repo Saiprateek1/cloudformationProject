@@ -70,3 +70,43 @@ Resources:
       Tags:
         - Key: Sai
           Value: DataPrivateSubnet2B
+
+  # InternetGeteway IGW
+  InternetGateway:
+    Type : "AWS::EC2::InternetGateway" 
+    Properties:
+      Tags:
+        - Key: Sai
+          Value : ProjectVpc-IGW       
+
+  # Attach Gateway
+  AttachGateway:
+    Type: "AWS::EC2::VPCGatewayAttachment"
+    Properties:
+      VpcId: !Ref ProjectVpc
+      InternetGatewayId: !Ref InternetGateway
+
+  # Route Table 
+  PublicRouteTable:
+    Type: "AWS::EC2::RouteTable"
+    Properties:
+      VpcId: !Ref ProjectVpc
+      Tags:
+        - Key: Sai
+          Value: PublicRouteTable
+
+  # Public Route       
+  PublicRoute:
+    Type: "AWS::EC2::Route"
+    DependsOn: AttachGateway
+    Properties:
+      RouteTableId : !Ref PublicRouteTable
+      DestinationCidrBlock: "0.0.0.0/0"
+      GatewayId: !Ref InternetGateway
+
+  # Public Subnet Association 
+  PublicSubnet1ARouteTableAssociation:
+    Type: "AWS::EC2::SubnetRouteTableAssociation"
+    Properties:
+      SubnetId: !Ref PublicSubnet2B
+      RouteTableId: !Ref PublicRouteTable
