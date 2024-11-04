@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'IAM Cloudformation template'
+
+Resources:
+  MyIAMUser:
+    Type: "AWS::IAM::User"  
+    Properties:
+      UserName: "SaiCFN"
+      ManagedPolicyArns:
+         - 'arn:aws:iam::aws:policy/AdministratorAccess'
+  
+ 
